@@ -13,7 +13,6 @@ public class HomeController {
 
     @GetMapping("/secured")
     public String secured() {
-        return "secured page";
+        return "secured";
     }
-
 }

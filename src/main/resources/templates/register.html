@@ -4,22 +4,18 @@
     <meta charset="UTF-8">
     <title>register</title>
 </head>
-<body>
+    <body>
+        <form th:action="@{/register}" method="post" th:object="${user}">
+            <input type="text" th:field="*{firstname}" placeholder="First name"><br>
+            <input type="text" th:field="*{lastname}" placeholder="Last name"><br>
 
-<form th:action="@{/register}" method="post" th:object="${user}">
-    <input type="text" th:field="*{firstname}" placeholder="First name"><br>
-    <input type="text" th:field="*{lastname}" placeholder="Last name"><br>
+            <p th:errors="*{email}">Email errors</p>
+            <input type="email" th:field="*{email}" placeholder="Email"><br>
 
-    <p th:errors="*{email}">Email errors</p>
-    <input type="email" th:field="*{email}" placeholder="Email"><br>
+            <p th:errors="*{password}">Password error</p>
+            <input type="password" th:field="*{password}" placeholder="Password">
 
-    <p th:errors="*{password}">Password error</p>
-    <input type="password" th:field="*{password}" placeholder="Password">
-
-    <input type="submit" value="register">
-
-
-</form>
-
-</body>
+            <input type="submit" value="register">
+        </form>
+    </body>
 </html>
